@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="calculator">
+        <div class="input">
+          <p id="display"></p>
+        </div>
+        <div class="btn-container">
+          <button class="btn" onclick="updateDisplay('C')" style="background-color: red;">C</button>
+          <button class="btn" onclick="updateDisplay('X')" style="background-color: rgb(252, 80, 80);">X</button>
+          <button class="btn" onclick="updateDisplay('%')" id="operator">%</button>
+          <button class="btn" onclick="updateDisplay('÷')"  id="operator">÷</button>
+        
+          <button class="btn" onclick="updateDisplay('7')">7</button>
+          <button class="btn" onclick="updateDisplay('8')">8</button>
+          <button class="btn" onclick="updateDisplay('9')">9</button>
+          <button class="btn" onclick="updateDisplay('*')"  id="operator">*</button>
+        
+          <button class="btn" onclick="updateDisplay('4')">4</button>
+          <button class="btn" onclick="updateDisplay('5')">5</button>
+          <button class="btn" onclick="updateDisplay('6')">6</button>
+          <button class="btn" onclick="updateDisplay('-')"  id="operator">-</button>
+        
+          <button class="btn" onclick="updateDisplay('1')">1</button>
+          <button class="btn" onclick="updateDisplay('2')">2</button>
+          <button class="btn" onclick="updateDisplay('3')">3</button>
+          <button class="btn" onclick="updateDisplay('+')"  id="operator">+</button>
+        
+          <button class="btn" onclick="updateDisplay('0')">0</button>
+          <button class="btn" onclick="updateDisplay('.')">.</button>
+          <button class="btn" onclick="calculate()" style="grid-column: span 2 ; background-color: rgb(85, 179, 85);">=</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function updateDisplay(value) {
+        const display = document.getElementById("display");
+
+        if (value === "C") {
+          display.textContent = ""; // Clear display on 'C'
+        } 
+        else{
+          if(value==="X"){
+            display.textContent = display.textContent.slice(0, -1); 
+          }
+          else {
+          display.textContent += value; // Append value to display
+        }
+        }
+                
+      }
+
+      function calculate() {
+        const display = document.getElementById('display');
+        let expression = display.textContent;
+
+        // Replace custom operators with JavaScript operators
+        expression = expression.replace('÷', '/');
+
+        try {
+          const result = eval(expression);
+          display.textContent = result;
+        } catch (error) {
+          display.textContent = 'Error';
+        }
+      }
+    </script>
+  </body>
+</html>

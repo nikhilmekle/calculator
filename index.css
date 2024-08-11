@@ -1,0 +1,125 @@
+.main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .calculator{
+    border-radius: 5px;
+    border: 3px solid black;
+    width: 20rem;
+    padding: 10px;
+    background-color: #ffbbc9;
+  }
+  .input {
+    width: 100%;
+    height: 5rem;
+    background-color: rgba(18, 13, 13, 0.8);
+    border-radius: 5px;
+    display: flex;             
+    align-items: center;       
+    justify-content: flex-end;  
+    background-color: white;    
+  }
+  
+  p {
+    font-size: 40px;
+    padding: 5px;  
+    font-weight: 550;
+  }
+  
+  
+  .btn {
+    padding: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: rgba(195, 50, 180, 0.8);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-weight: bolder;
+  }
+
+  .btn-container{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+            
+  }
+
+.btn:hover {
+
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); 
+}
+  
+  #operator{
+    background-color: orange;
+  }
+
+
+
+
+/* Responsive adjustments */
+@media (max-width: 599px) {
+  .calculator {
+    width: 90%; /* Full width with margin on small screens */
+    max-width: 90%;
+  }
+
+  .btn {
+    padding: 15px;
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+
+  .btn-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 buttons per row */
+    gap: 5px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .calculator {
+    width: 80%; /* Adjust width for tablets */
+    max-width: 80%;
+  }
+
+  .btn {
+    padding: 18px;
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 2.2rem;
+  }
+
+  .btn-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 buttons per row */
+    gap: 8px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .calculator {
+    width: 50%; /* Adjust width for larger screens */
+    max-width: 400px; /* Maximum width for larger screens */
+  }
+
+  .btn {
+    padding: 20px;
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 2.5rem;
+  }
+
+  .btn-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 buttons per row */
+    gap: 10px;
+  }
+}
